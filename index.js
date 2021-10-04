@@ -21,8 +21,9 @@ function saveTask(e) {
   localStorage.setItem('task',JSON.stringify(tasks));
   localStorage.getItem('task')
   console.log(task)
-  alert('enviando formulario');
+
   e.preventDefault();
+
   getTasks(); /*Agrega el elemento recien guardado en la exposición*/
 }
 /* JSON.parse transforma de string a valor y
@@ -49,7 +50,16 @@ function getTasks(){
     </div>`
   }
 }
-
+function taskAdded(){
+  let title =tasks[i].title
+  let description = tasks[i].description
+  tasksView.innerHTML +=`<div class="card mb-2">
+    <div class="card-body">
+      <p>${title}  - ${description}</p>
+      <h2>Tarea agregada exitosamente</h2>
+    </div>
+  </div>`
+}
 function deleteTask(title){
   let tasks = JSON.parse(localStorage.getItem('tasks'));
   for(let i = 0; i < tasks.length; i++) {
