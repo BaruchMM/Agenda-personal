@@ -9,30 +9,23 @@
   <body>
 
     <!-- NAVIGATION -->
-    <nav class="navbar navbar-light bg-light">
-
-      <div class="container">
-        <a class="navbar-brand" onclick="location.href='index.html'" href="#"><img src="logo.png" height="60" alt="chale" hspace="90" href="#"></a>
+      
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" onclick="location.href='index.html'" href="#">
+          <h4 class="card-title" >Organizador personal</h4>
+        </a>
+        <img src="logo.png" height="60" alt="chale" hspace="90" href="#">
       </div>
+
     </nav>
 
     <div class="container">
       <div class="row my-5">
-        <div class="col-md-8">
+        <div class="col-md-8" >
 
-          <div class="card">
-            <div class="card-body">
-              <!-- FORM TO ADD TASKS -->
-              <form id="formTask">
-                <div class="form-group">
-                  <input type="text" id="title" placeholder="Añade un título" class="form-control">
-                </div>
-                <div class="form-group">
-                  <textarea id="description" cols="30" rows="10" class="form-control" placeholder="Describe la tarea"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Save</button>
-              </form>
-            </div>
+          <div class="card" id='editor'>
+
           </div>
           <div class="container">
             <button type="return" class="btn btn-secundary btn-block" name="button" onclick="location.href='index.html'">Regresar</button>

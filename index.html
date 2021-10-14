@@ -4,41 +4,51 @@
     <meta charset="UTF-8">
     <title>Javsascript Task App</title>
     <!-- BOOTSTRAP 4 BOOTSWATCH LUX THEME -->
+    <link rel="stylesheet" href="body.css">
     <link rel="stylesheet"  href="https://bootswatch.com/4/lux/bootstrap.min.css">
   </head>
   <body>
 
     <!-- NAVIGATION -->
-    <nav class="navbar navbar-light bg-light">
-
-      <div class="container">
-        <a class="navbar-brand" href="#"><img src="logo.png" height="60" alt="chale" hspace="90" href="#"></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <h4 class="card-title" >Organizador personal</h4>
+        </a>
+        <img src="logo.png" height="60" alt="chale" hspace="90" href="#">
       </div>
+
     </nav>
+    <section class="showcase">
+      <video src="espacio_moviendose.mp4" muted loop autoplay>
 
-    <div class="container">
-      <div class="row my-5">
-        <div class="col-md-4">
-
-          <div class="card">
-
-            <div class="card-body bg-light">
-              <h2 class="navbar navbar-light bg-light">Aquí puedes agregar una tarea</h2>
-              <!-- FORM TO ADD TASKS -->
-              <button onclick="location.href='formulario.html'" class="btn btn-primary btn-block">Agregar +</button>
-              <form>
-
-
-              </form>
+      </video>
+      <div class="container" >
+        <div class="row my-5">
+          <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+              <div class="card-header">
+                <center><h4 class="card-title" >Aquí puedes agregar una tarea</h4></center>
+              </div>
+              <div class="card-body">
+                <button onclick="location.href='formulario.html'" class="btn btn-primary btn-block">Agregar +</button>
+              </div>
             </div>
+
+          </div>
+
+          <div class="col-md-4">
+
+          </div>
+          <div class="col-md-4",  >
+            <img src="logo1.png" height="570">
           </div>
         </div>
-
-        <div class="col-md-8">
-          <img src="logo1.png" height="300">
-        </div>
       </div>
-    </div>
+    </section>
+
+
+
     <script src="./index.js"></script>
   </body>
 </html>
