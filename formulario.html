@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Javsascript Task App</title>
+    <!-- BOOTSTRAP 4 BOOTSWATCH LUX THEME -->
+    <link rel="stylesheet"  href="https://bootswatch.com/4/lux/bootstrap.min.css">
+  </head>
+  <body>
+
+    <!-- NAVIGATION -->
+      
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" onclick="location.href='index.html'" href="#">
+          <h4 class="card-title" >Organizador personal</h4>
+        </a>
+        <img src="logo.png" height="60" alt="chale" hspace="90" href="#">
+      </div>
+
+    </nav>
+
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-md-8" >
+
+          <div class="card" id='editor'>
+
+          </div>
+          <div class="container">
+            <button type="return" class="btn btn-secundary btn-block" name="button" onclick="location.href='index.html'">Regresar</button>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div id="tasks"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
