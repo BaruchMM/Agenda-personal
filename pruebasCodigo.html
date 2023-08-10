@@ -1,0 +1,76 @@
+<script>
+    let logoutTimer;
+    let countdownInterval;
+    const LOGOUT_TIME = 5 * 60 * 1000; // 0.5 minutes (or 30 seconds) in milliseconds
+
+    function startLogoutTimer() {
+    // Clear the previous timer, if any
+        if (localStorage.getItem("_ms-mem") || localStorage.getItem("_ms-midd")){
+            clearTimeout(logoutTimer);
+            clearInterval(countdownInterval);
+
+            let startTime = Date.now();
+            // Start a new timer to redirect the user after 0.5 minutes
+            logoutTimer = setTimeout(() => {
+                localStorage.clear();
+                var a = document.body;
+                a.style.background = "linear-gradient(56deg, #0e6a11c4, #333333a8)";
+                a.style["justify-content"]= "center";
+                a.style["align-items"] = "center";
+                a.style.display="flex";
+                a.innerHTML = `<div>
+                                    <div class="white-box center-message">
+                                        <div class="box-padding">
+                                            <h3 class="large-number">
+                                                <span>Sesión expirada</span>
+                                            </h3>
+                                            <div>Por seguridad de su información, se ha cerrado su sesión. Favor de iniciar sesión de nuevo.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="https://uploads-ssl.webflow.com/622155f9a61643352c4d476f/622155f9a6164332bf4d47ec_Screen%20Shot%202021-01-22%20at%203.14.55%20PM.png" alt="" style="position: absolute;
+                                z-index: 10;
+                                top: 5vh;
+                                left: 5vh;
+                                width: 150px;">`;
+                let timer = setTimeout(()=>{
+                    alert("Su sesión expiró, favor de iniciar sesión.")
+                    window.location = "https://imadata.webflow.io/";
+                },100)
+                
+            }, LOGOUT_TIME); 
+
+            // Start a countdown timer
+            countdownInterval = setInterval(() => {
+                let elapsed = Date.now() - startTime;
+                let remaining = LOGOUT_TIME - elapsed;
+            }, 1000); // update every second
+        } 
+    }
+
+
+    // Call this function whenever the user interacts with the page
+    function resetLogoutTimer() {
+    startLogoutTimer();
+    }
+
+    // Call this function when the user logs in
+    function cancelLogoutTimer() {
+    clearTimeout(logoutTimer);
+    clearInterval(countdownInterval);
+    }
+
+    // Start the timer when the page loads
+    if (localStorage.getItem("_ms-mem") || localStorage.getItem("_ms-midd")){
+        console.log("Suscriptor")
+        startLogoutTimer();
+        // Add event listeners to reset timer on any page activity
+        document.addEventListener('mousemove', resetLogoutTimer);
+        document.addEventListener('keypress', resetLogoutTimer);
+        document.addEventListener('touchstart', resetLogoutTimer);
+    } else {
+        console.log('no hay sesiones')
+    }
+
+
+</script>

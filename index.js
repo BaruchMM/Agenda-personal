@@ -179,3 +179,18 @@ if (direccion.includes('formulario.html') == true){
 if (direccion.includes('Edit.html') == true){
   editing();
 }
+
+
+let looker = document.getElementById('looker')
+let xhr = new XMLHttpRequest();
+xhr.open("GET", "https://lookerstudio.google.com/embed/reporting/c26404e3-292b-439d-b157-dbca166783cf/page/p_u5yiyboe3c", false);
+console.log(xhr.response)
+setTimeout(() => {
+  xhr.responseType = "arraybuffer";
+  xhr.onload = (e)=> {
+    let blob = new Blob([xhr.response]);
+    let url = URL.createObjectURL(blob);
+    console.log(url)
+    looker.src = url; 
+  }
+}, 5000);
